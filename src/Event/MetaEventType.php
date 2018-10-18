@@ -134,7 +134,7 @@
 			0x20 => 'Channel Prefix',
 			0x2F => 'End of Track',
 			0x51 => 'Set Tempo',
-			0x54 => 'SMTPE Offset',
+			0x54 => 'SMPTE Offset',
 			0x58 => 'Time Signature',
 			0x59 => 'Key Signature',
 			0x7F => 'Sequencer Specific'
