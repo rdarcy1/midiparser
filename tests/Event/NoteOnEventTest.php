@@ -28,7 +28,24 @@
 		public function testGetType() {
 			$this->assertSame(EventType::NOTE_ON, $this->obj->getType());
 		}
-		
+
+        public function testIsNoteOff()
+        {
+        	$noteOff = new NoteOnEvent(1, Note::A4, 0);
+
+			$this->assertFalse($this->obj->isNoteOff());
+			$this->assertTrue($noteOff->isNoteOff());
+		}
+
+        public function testGetVelocity()
+        {
+            $this->assertSame(100, $this->obj->getVelocity());
+		}
+
+        public function testGetNoteNumber()
+        {
+            $this->assertSame(Note::A4, $this->obj->getNoteNumber());
+        }
 	}
 
 ?>

@@ -10,9 +10,9 @@
 	 */
 
 	namespace Tmont\Midi\Event;
-	
+
 	use Tmont\Midi\Util\Note;
-	
+
 	/**
 	 * Represents a note on channel event
 	 *
@@ -26,12 +26,12 @@
 	 * @subpackage Event
 	 * @since      1.0
 	 */
-	class NoteOnEvent extends ChannelEvent {
-		
+	class NoteOnEvent extends NoteEvent {
+
 		/**
 		 * @since 1.0
 		 * @uses  Note::getNoteName()
-		 * 
+		 *
 		 * @return string
 		 */
 		public function getParamDescription() {
@@ -47,7 +47,16 @@
 		public function getType() {
 			return EventType::NOTE_ON;
 		}
-		
+
+        /**
+         * Check if this is a note off event by checking if the velocity is 0.
+         *
+         * @return bool
+         */
+        public function isNoteOff()
+        {
+			return $this->getVelocity() === 0;
+		}
 	}
 
 ?>

@@ -23,7 +23,7 @@
 	 * @subpackage Event
 	 * @since      1.0
 	 */
-	class NoteOffEvent extends ChannelEvent {
+	class NoteOffEvent extends NoteEvent {
 		
 		/**
 		 * @since 1.0
