@@ -13,7 +13,7 @@
 		private $obj;
 		
 		public function setUp() {
-			$this->obj = new TimeSignatureEvent(4, 4);
+			$this->obj = new TimeSignatureEvent(3, 4);
 		}
 		
 		public function tearDown() {
@@ -22,7 +22,7 @@
 		
 		public function testGetParamDescription() {
 			$this->assertEquals(
-				'4/4, metronome pulses every 24 clock ticks, 8 32nd notes per quarter note',
+				'3/4, metronome pulses every 24 clock ticks, 8 32nd notes per quarter note',
 				$this->obj->getParamDescription()
 			);
 		}
@@ -30,7 +30,16 @@
 		public function testGetSubtype() {
 			$this->assertSame(MetaEventType::TIME_SIGNATURE, $this->obj->getSubtype());
 		}
-		
+
+        public function testGetNumerator()
+        {
+            $this->assertSame(3, $this->obj->getNumerator());
+		}
+
+        public function testGetDenominator()
+        {
+            $this->assertSame(4, $this->obj->getDenominator());
+        }
 	}
 
 ?>

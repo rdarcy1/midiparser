@@ -73,7 +73,26 @@
 		public function getSubtype() {
 			return MetaEventType::TIME_SIGNATURE;
 		}
-		
-	}
+
+        /**
+         * Get the time signature numerator.
+         *
+         * @return int
+         */
+        public function getNumerator()
+        {
+            return $this->data[0];
+		}
+
+        /**
+         * Get the time signature denominator.
+         *
+         * @return int
+         */
+        public function getDenominator()
+        {
+            return (int) pow($this->data[1], 2);
+        }
+    }
 
 ?>
